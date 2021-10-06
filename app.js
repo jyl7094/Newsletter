@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const port = 3000;
+const port = process.env.PORT;
 
 const https = require("https");
 
@@ -66,6 +66,6 @@ app.post("/", (req, res) => {
 });
 
 
-app.listen(port, () => {
-    console.log(`Server is running on port: ${port}`);
+app.listen(port || 3000, () => {
+    console.log(`Server is running on port: ${port || 3000}`);
 });
